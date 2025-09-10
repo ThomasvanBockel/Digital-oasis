@@ -36,23 +36,56 @@ $product = $products[$id];
     <title><?php echo htmlspecialchars($product['name']); ?> - Productpagina</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .product-detail { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 32px; }
-        .product-detail .product-image { height: 180px; background: #888; border-radius: 6px; margin-bottom: 24px; }
-        .product-detail h2 { margin-top: 0; }
-        .add-cart-btn { background: #666; color: #fff; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 1rem; margin-top: 24px; }
+        .product-detail {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 32px;
+        }
+
+        .product-detail .product-image {
+            height: 180px;
+            background: #888;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            object-fit: contain;
+        }
+
+        img {
+            margin-left: 10%;
+            width: 400px;
+            height: 100%;
+        }
+
+        .product-detail h2 {
+            margin-top: 0;
+        }
+
+        .add-cart-btn {
+            background: #666;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 24px;
+        }
     </style>
 </head>
 <body>
-    <div class="product-detail">
-        <div class="product-image"></div>
-        <h2><?php echo htmlspecialchars($product['name']); ?></h2>
-        <p><strong>Prijs:</strong> <?php echo $product['price']; ?></p>
-        <p><?php echo htmlspecialchars($product['desc']); ?></p>
-        <form method="post" action="add_to_cart.php">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <button type="submit" class="add-cart-btn">Toevoegen aan winkelwagen</button>
-        </form>
-        <p><a href="index.php">← Terug naar overzicht</a></p>
-    </div>
+<div class="product-detail">
+    <div class="product-image"><img src="images/rubber_plant.webp"></div>
+    <h2><?php echo htmlspecialchars($product['name']); ?></h2>
+    <p><strong>Prijs:</strong> <?php echo $product['price']; ?></p>
+    <p><?php echo htmlspecialchars($product['desc']); ?></p>
+    <form method="post" action="add_to_cart.php">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <button type="submit" class="add-cart-btn">Toevoegen aan winkelwagen</button>
+    </form>
+    <p><a href="index.php">← Terug naar overzicht</a></p>
+</div>
 </body>
 </html>

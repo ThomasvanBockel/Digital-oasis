@@ -25,7 +25,7 @@ $products = [
 foreach ($products as $product) {
     $id = array_search($product, $products);
     echo '<a class="product-card" href="product.php?id=' . $id . '">';
-    echo '<div class="product-image"></div>';
+    echo '<div class="product-image"><img src="images/rubber_plant.webp"></div>';
     echo '<div class="product-info">';
     echo '<strong>' . htmlspecialchars($product["name"]) . '</strong><br>';
     echo $product["price"];

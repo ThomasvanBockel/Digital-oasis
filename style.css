@@ -90,6 +90,13 @@ body {
     background: #888;
     height: 100px;
     width: 100%;
+    object-fit: contain;
+}
+
+img {
+    margin-left: 7%;
+    width: 200px;
+    height: 100%;
 }
 
 .product-info {
